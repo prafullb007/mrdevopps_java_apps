@@ -5,10 +5,11 @@ pipeline{
     stages{
         stage('Git Checkout'){
               steps{
-            gitCheckout(
-                branch: "main",
-                url: "https://github.com/vikash-kumar01/mrdevops_java_app.git"
-            )
+                script{
+                    git branch: 'main', credentialsId: 'githubcedential', url: 'https://github.com/prafullb007/mrdevopps_java_apps.git'
+
+                }
+
             }
         }
             }
